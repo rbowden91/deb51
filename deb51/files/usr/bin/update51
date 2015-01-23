@@ -1,0 +1,29 @@
+#!/bin/bash
+#
+# This is CS51 update!
+#
+# To run, execute "update51" at the command line.
+
+echo -e "\nDO NOT CLOSE THIS WINDOW OR PUT YOUR COMPUTER TO SLEEP <3\n"
+sleep 2
+
+# try to fix dpkg before updating
+sudo dpkg --configure -a > /dev/null 2>&1
+
+sudo apt-get update
+if [ $? -ne 0 ]
+then
+    echo 'Something went wrong!'
+    exit 1
+fi
+
+sudo apt-get install --reinstall deb51
+if [ $? -ne 0 ]
+then
+    echo 'Something went wrong!'
+    exit 1
+fi
+
+install51
+
+echo 'Update complete!'

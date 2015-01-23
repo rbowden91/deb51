@@ -1,0 +1,26 @@
+#!/bin/bash
+
+if [ ! -f "/home/jharvard/.installed51-0" ]
+then
+	update50
+	
+	sudo add-apt-repository -y ppa:avsm/ppa
+	sudo apt-get update
+	sudo apt-get install -y ocaml ocaml-native-compilers camlp4-extra opam ocaml-doc m4 tuareg-mode
+	
+	# initialize opam
+	echo "y\n" | opam init
+	
+	# install ocaml packages via opam
+	opam install -y core=111.28.01 utop async yojson core_extended core_bench cohttp async_graphics cryptokit menhir
+	
+	# configure opam in current shell session (don't run in install situation)
+	#eval `opam config env`
+	
+	tee -a ~/.bashrc << EOF
+	# OPAM configuration
+	. /home/jharvard/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
+EOF
+
+    touch /home/jharvard/.installed51-0
+fi

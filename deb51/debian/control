@@ -1,0 +1,12 @@
+Source: deb51
+Maintainer: CS50 <sysadmins@cs50.harvard.edu>
+Section: misc
+Priority: optional
+Standards-Version: 0
+Build-Depends:
+
+Package: deb51
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Setup for CS51.
+  Setup for CS51.
