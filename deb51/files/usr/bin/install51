@@ -12,7 +12,7 @@ then
 	echo "y\n" | opam init
 	
 	# install ocaml packages via opam
-	opam install -y core=111.28.01 utop async yojson core_extended core_bench cohttp async_graphics cryptokit menhir
+	opam install -y core utop async yojson core_extended core_bench cohttp async_graphics cryptokit menhir
 	
 	# configure opam in current shell session (don't run in install situation)
 	#eval `opam config env`

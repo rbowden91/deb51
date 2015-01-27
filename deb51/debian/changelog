@@ -1,3 +1,9 @@
+deb51 (0-1) UNRELEASED; urgency=medium
+
+  * Change opam install line
+
+ -- Rob Bowden <rob@cs.harvard.edu>  Tue, 27 Jan 2015 12:18:13 -0500
+
 deb51 (0-0) UNRELEASED; urgency=medium
 
   * Initial Release
