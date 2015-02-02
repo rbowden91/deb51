@@ -17,13 +17,19 @@ then
 	# configure opam in current shell session (don't run in install situation)
 	#eval `opam config env`
 
-	# configure Jane Street core
-	echo '#require "core.top"' >> /home/jharvard/.ocamlinit
-	
 	tee -a ~/.bashrc << EOF
 	# OPAM configuration
 	. /home/jharvard/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
 EOF
 
     touch /home/jharvard/.installed51-0
+fi
+
+
+if [ ! -f "/home/jharvard/.installed51-1" ]
+then
+	# configure Jane Street core
+	echo '#require "core.top"' >> /home/jharvard/.ocamlinit
+	
+    touch /home/jharvard/.installed51-1
 fi
