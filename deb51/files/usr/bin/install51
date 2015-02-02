@@ -16,6 +16,9 @@ then
 	
 	# configure opam in current shell session (don't run in install situation)
 	#eval `opam config env`
+
+	# configure Jane Street core
+	echo '#require "core.top"' >> /home/jharvard/.ocamlinit
 	
 	tee -a ~/.bashrc << EOF
 	# OPAM configuration
