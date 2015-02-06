@@ -1,3 +1,9 @@
+deb51 (0-3) UNRELEASED; urgency=medium
+
+  * New ocamlinit
+
+ -- Rob Bowden <rob@cs.harvard.edu>  Fri, 06 Feb 2015 17:06:00 -0500
+
 deb51 (0-2) UNRELEASED; urgency=medium
 
   * Configure Jane Street core
