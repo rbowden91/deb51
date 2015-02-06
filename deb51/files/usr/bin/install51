@@ -33,3 +33,30 @@ then
 	
 	touch /home/jharvard/.installed51-2
 fi
+
+
+if [ ! -f "/home/jharvard/.installed51-3" ]
+then
+    # remove ~/.bash_profile if exists and is empty
+    if [ -s "/home/jharvard/.bash_profile" ]
+    then
+        echo "WARNING: check that ~/.bash_profile sources ~/.bashrc"
+    else
+        rm -f /home/jharvard/.bash_profile
+    fi
+
+    # backup old .ocamlinit
+    mv /home/jharvard/.ocamlinit /home/jharvard/.ocamlinit.backup
+
+    # reset .ocamlinit
+    cat >/home/jharvard/.ocamlinit << EOF
+#use "topfind";;
+#thread;;
+#camlp4o;;
+#require "core.top";;
+#require "core.syntax";;
+open Core.Std
+EOF
+
+	touch /home/jharvard/.installed51-3
+fi
